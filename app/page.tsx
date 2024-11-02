@@ -1,101 +1,98 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+export default function Component() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="min-h-screen bg-black text-white p-6 font-mono flex items-center justify-center relative">
+      <div className="absolute top-6 right-6 w-48 h-48 ">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
+          src="/seo.png"
+          alt="Profile picture"
+          width={192}
+          height={192}
+          className="object-cover brightness-50 contrast-200 sepia-[0.8]"
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+      <div className="max-w-[32rem] w-full text-sm [&>p]:text-xs [&>p]:text-[#909090] [&_a]:text-xs [&_a]:text-[#909090]">
+        <h1 className="font-normal mb-2">
+          munkhsuld bayaraa<span className="caret">_</span>
+        </h1>
+        <p className="mb-4">suldespace</p>
+
+        <div className="mb-8"></div>
+
+        <h2 className="font-normal mb-2">today</h2>
+        <p className="mb-8">
+          i&apos;m the co-founder at{" "}
+          <Link
+            href="https://ghorde.com"
+            className="text-[#909090]"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            ghorde
+          </Link>
+          , making cool stuff that performs. Our team is passionate about
+          creating innovative solutions and explores cutting-edge technologies
+          to turn ambitious visions into reality.
+        </p>
+
+        <h2 className="font-normal mb-2">interests</h2>
+        <p className="mb-8">
+          Front-end Development, Design Systems, and the future of the web3.
+        </p>
+
+        <h2 className="font-normal mb-2">previously</h2>
+        <p className="mb-8"> - infinite solutions, software engineer.</p>
+
+        <h2 className="font-normal mb-2">hobbies</h2>
+        <ul className="list-none p-0 space-y-1 mb-8">
+          {[
+            { href: "https://nextjs.org", text: "next.js" },
+            { href: "https://vercel.com", text: "vercel" },
+            { href: "https://ui.shadcn.com", text: "shadcn/ui" },
+            { href: "https://v0.dev/", text: "v0.dev" },
+          ].map((investment, index) => (
+            <li key={index}>
+              <Link
+                href={investment.href}
+                className="text-[#909090]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {investment.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="font-normal mb-2">connect</h2>
+        <p className="mb-8">
+          reach me at{" "}
+          <a href="mailto:sulde.dev@gmail.com" className="text-[#909090]">
+            sulde.dev@gmail.com
+          </a>{" "}
+          or follow my work on{" "}
+          <Link
+            href="https://github.com/SuldeD"
+            className="text-[#909090] text-[0.85rem]"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            Github
+          </Link>
+          .
+        </p>
+
+        <div className="text-left text-[#909090] mt-8 mb-4">[***]</div>
+
+        <blockquote className="text-xs text-[#909090] italic">
+          &quot;the reason to finish is to start something new.&quot; — rick
+          rubin
+        </blockquote>
+      </div>
     </div>
   );
 }
