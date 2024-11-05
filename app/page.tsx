@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Component() {
   return (
-    <div className="min-h-screen bg-black text-white p-6 font-mono flex items-center justify-center relative">
+    <div className="min-h-screen bg-background text-foreground p-6 font-mono flex items-center justify-center relative">
       <div className="absolute top-6 right-6 w-36 h-36 sm:w-48 sm:h-48 ">
         <Image
           src="/seo.png"
