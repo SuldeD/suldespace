@@ -1,97 +1,85 @@
+"use client";
+
+import { useState } from "react";
+import DynamicFrameLayout from "../components/DynamicFrameLayout";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Component() {
+export default function Home() {
+  const [headerSize] = useState(1.2); // 120% is the default size
+  const [textSize] = useState(0.8); // 80% is the default size
+
   return (
-    <div className="min-h-screen bg-background text-foreground p-6 font-mono flex items-center justify-center relative">
-      <div className="absolute top-6 right-6 w-36 h-36 sm:w-48 sm:h-48 ">
-        <Image
-          src="/seo.png"
-          alt="Profile picture"
-          width={192}
-          height={192}
-          className="object-cover brightness-50 contrast-200 sepia-[0.8]"
-          priority
-        />
-      </div>
-
-      <div className="max-w-[32rem] w-full text-sm [&>p]:text-xs [&>p]:text-[#909090] [&_a]:text-xs [&_a]:text-[#909090]">
-        <h1 className="font-normal mb-2">
-          munkhsuld bayaraa<span className="caret">_</span>
-        </h1>
-        <p className="mb-4">suldespace</p>
-
-        <div className="mb-8"></div>
-
-        <h2 className="font-normal mb-2">today</h2>
-        <p className="mb-8">
-          i&apos;m the co-founder at{" "}
-          <Link
-            href="https://ghorde.com"
-            className="text-[#909090]"
+    <div
+      className={`min-h-screen bg-[#141414] flex items-center justify-center p-8 `}
+    >
+      <div className="w-full h-full flex flex-col md:flex-row items-start gap-8 md:gap-8">
+        {/* Left Content */}
+        <div className="w-full md:w-[260px] flex-shrink-0 flex flex-col justify-between h-full">
+          <div className="flex flex-col gap-16">
+            <h1
+              className={` text-4xl md:text-6xl font-light italic text-white/80 tracking-tighter leading-[130%]`}
+              style={{ fontSize: `${4 * headerSize}rem` }}
+            >
+              Brand
+              <br />
+              Designer
+              <br />
+              at Luma?
+            </h1>
+            <div
+              className={` flex flex-col gap-12 text-white/50 text-sm font-light max-w-[300px]`}
+              style={{ fontSize: `${0.875 * textSize}rem` }}
+            >
+              <div className="space-y-6">
+                <div className="h-px bg-white/10 w-full" />
+                <p>
+                  Luma is looking to hire a multi-disciplinary Brand Designer to
+                  develop and maintain the brand identity and communicate the
+                  story of Luma to the world. Alongside members of the design
+                  team using product and research insights, you will help shape
+                  and define Luma&apos;s brand across product surfaces, social
+                  media, merchandise, marketing website, launch campaigns as
+                  well as other new channels.
+                </p>
+                <p>
+                  You will use a combination of graphic design, motion design,
+                  web design and video production/editing skills across
+                  traditional and innovative tools to communicate in visually
+                  compelling and impactful ways.
+                </p>
+                <p>Here are some of our favorite works so far.</p>
+                <div className="h-px bg-white/10 w-full" />
+              </div>
+            </div>
+            <Link
+              href="https://lumalabs.ai"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-8 h-8 relative opacity-80 hover:opacity-100 transition-opacity"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LumaLogo%201-MA3upjPymxFHKoHJgpdAUfZMeKGq3i.png"
+                alt="Luma Logo"
+                fill
+                className="object-contain"
+              />
+            </Link>
+          </div>
+          <a
+            href="https://lumalabs.ai/join?role=5d274587-f8fd-4f53-a5b6-8f85d586e1aa"
+            className="inline-block px-6 py-3 text-white/70 border border-white/20 rounded-full font-medium hover:bg-white/5 transition-colors text-center w-full max-w-[260px] text-sm mt-16"
             target="_blank"
             rel="noopener noreferrer"
           >
-            ghorde
-          </Link>
-          , making cool stuff that performs. Our team is passionate about
-          creating innovative solutions and explores cutting-edge technologies
-          to turn ambitious visions into reality.
-        </p>
+            Apply
+          </a>
+        </div>
 
-        <h2 className="font-normal mb-2">interests</h2>
-        <p className="mb-8">
-          Front-end Development, Design Systems, and the future of the web3.
-        </p>
-
-        <h2 className="font-normal mb-2">previously</h2>
-        <p className="mb-8"> - infinite solutions, software engineer.</p>
-
-        <h2 className="font-normal mb-2">hobbies</h2>
-        <ul className="list-none p-0 space-y-1 mb-8">
-          {[
-            { href: "https://nextjs.org", text: "next.js" },
-            { href: "https://vercel.com", text: "vercel" },
-            { href: "https://ui.shadcn.com", text: "shadcn/ui" },
-            { href: "https://v0.dev/", text: "v0.dev" },
-          ].map((investment, index) => (
-            <li key={index}>
-              <Link
-                href={investment.href}
-                className="text-[#909090]"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {investment.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <h2 className="font-normal mb-2">connect</h2>
-        <p className="mb-8">
-          reach me at{" "}
-          <a href="mailto:sulde.dev@gmail.com" className="text-[#909090]">
-            sulde.dev@gmail.com
-          </a>{" "}
-          or follow my work on{" "}
-          <Link
-            href="https://github.com/SuldeD"
-            className="text-[#909090] text-[0.85rem]"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github
-          </Link>
-          .
-        </p>
-
-        <div className="text-left text-[#909090] mt-8 mb-4">[***]</div>
-
-        <blockquote className="text-xs text-[#909090] italic">
-          &quot;the reason to finish is to start something new.&quot; — rick
-          rubin
-        </blockquote>
+        {/* Right Content */}
+        <div className="w-full md:flex-grow h-[60vh] md:h-[80vh]">
+          <DynamicFrameLayout />
+        </div>
       </div>
     </div>
   );
